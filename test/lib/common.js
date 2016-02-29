@@ -2,7 +2,12 @@
 expect = require('chai').expect
 async = require('async')
 assert = require('assert')
-DynamoDB = require('../../lib/dynamodb')()
+var $credentials = {
+	"accessKeyId": "XXXXXXXXXXXXXXXXXXXX",
+	"secretAccessKey": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+	"region": "ap-southeast-1"
+}
+DynamoDB = require('../../lib/dynamodb')($credentials)
 DynamoDB.on('error', function(op, error, payload ) {
 	//console.log(op,error,payload)
 })
